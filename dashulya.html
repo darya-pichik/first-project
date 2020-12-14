@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>График поливки цветов</h1>
+    <h2>Вадим, не забывай поливать цветы вовремя!!!!</h2>
+    <table>
+      <thead>
+        <tr>
+          <td>дата</td>
+          <td>куся старший</td>
+          <td>куся младший</td>
+          <td>авокадо</td>
+          <td>кактусы</td>
+          <td>кошачья травка</td>
+          <td>висячий</td>
+          <td>алоэ</td>
+        </tr>
+      </thead>
+      <tbody>
+      
+      </tbody>
+    </table>
+    <script>
+      const today = new Date();
+       const last_Date_Kusya = new Date(2020, 11, 11);
+       const KusyaInterval =10;
+
+      for (let index = 0; index < 365; index++) {
+
+        const Difference_In_Time = today.getTime() - last_Date_Kusya.getTime();
+        const Difference_In_Day = Math.round(Difference_In_Time / (1000 * 3600 *24));
+
+        let NadoLiPolivat = "не поливай";
+
+        if (Difference_In_Day % KusyaInterval === 0) {
+          NadoLiPolivat = "полить";
+        }
+        const month = today.getMonth() + 1;
+        console.log(today.getDate() + "." + month + ' ' + NadoLiPolivat);
+        today.setDate(today.getDate() + 1);      
+      }
+    </script>
+  </body>
+</html>
